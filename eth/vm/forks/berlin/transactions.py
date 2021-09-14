@@ -404,7 +404,7 @@ class BerlinTransactionBuilder(TransactionBuilderAPI):
 
     @classmethod
     def deserialize(cls, encoded: DecodedZeroOrOneLayerRLP) -> SignedTransactionAPI:
-        if isinstance(encoded, bytes):
+        if isinstance(encoded, (bytes, bytearray)):
             return cls.typed_transaction.deserialize(encoded)
         else:
             return cls.legacy_signed.deserialize(encoded)
