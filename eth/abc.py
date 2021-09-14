@@ -53,7 +53,7 @@ from eth.typing import (
 T = TypeVar('T')
 
 # A decoded RLP object of unknown interpretation, with a maximum "depth" of 1.
-DecodedZeroOrOneLayerRLP = Union[bytes, List[bytes]]
+DecodedZeroOrOneLayerRLP = Union[bytes, bytearray, List[bytes]]
 
 
 class MiningHeaderAPI(ABC):
